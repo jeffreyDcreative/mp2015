@@ -1,0 +1,41 @@
+/* 
+========================
+
+MODULAR SCALE
+|___ 24px @ 1:1.5	
+|___ 18px @ 1:1.5	
+
+========================
+*/
+
+
+$font-size_9: 136.688px;
+$font-size_8: 121.5px; 
+$font-size_7: 91.125px; 	
+$font-size_6: 81px; 	
+$font-size_5: 60.75px; 
+
+$font-size_4: 54px; 	
+$font-size_3: 40.5px; 	
+$font-size_2: 36px; 	
+$font-size_1: 27px;	
+$font-size_0: 24px; 	
+$font-size_-1: 18px; 	
+$font-size_-2: 16px; 	
+$font-size_-3: 12px; 	
+$font-size_-4: 10.667px; 	
+$font-size_-5: 8px;	
+
+
+
+// 63px 
+$font-size_4-half: $font-size_2 + $font-size_1;
+
+// 32px
+$font-size_1-half: $font-size_0 + $font-size_-5;
+
+// 20px
+$font-size_-half: $font-size_-3 + $font-size_-5;
+
+// 14px
+$font-size_-1-half: $font-size_4 - $font-size_3;

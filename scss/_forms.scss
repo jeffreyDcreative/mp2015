@@ -1,0 +1,286 @@
+
+
+/*
+--------------------------------------
+TYPEFACES
+--------------------------------------
+
+*/
+$label-font: "Gotham Condensed";
+$input-font: "Gotham";
+$button-font: "Gotham";
+
+
+/*
+--------------------------------------
+TYPE COLOR
+--------------------------------------
+*/
+$input-color: gray;
+	$input-color_hover: lighten($input-color, 5%);
+	$input-color_focus: darken($input-color, 5%);
+
+$label-color: black;
+$input-placeholder-color: rgba(51,51,51,0.4);
+
+
+
+
+/*
+--------------------------------------
+FORM COLORS
+--------------------------------------
+*/
+
+$form_default-label-width: 25%;
+$form_default-input-width: 75%;
+
+$input-bg-color: rgb(238, 238, 238);
+	$input-bg-color_hover: lighten($input-bg-color, 6%);
+	$input-bg-color_focus: lighten($input-bg-color, 100%);
+
+$input-border-color: darken($input-bg-color, 12%);
+	$input-border-color_hover: desaturate(rgba(220, 61, 28, 0.5), 12%);
+	$input-border-color_focus: desaturate(rgba(220, 61, 28, 0.7), 12%);
+
+
+/*
+--------------------------------------
+BUTTON
+--------------------------------------
+*/
+
+$button-text-color: white;
+$button-bg-color: blue;
+
+
+
+
+
+%form__input {
+
+	margin-bottom: $vertical-padding-unit * 4;
+	font-family: $input-font;
+	color: $input-color;
+	
+	transition: all .25s  ease-in;
+	background-color: $input-bg-color;
+	border: 1px $input-border-color solid;
+	border-radius: 8px;
+}
+
+
+
+.form {}
+
+.form__fields {}
+
+
+.form__label {
+	width: $form_default-label-width;
+	vertical-align: top;
+
+	font-family: $label-font;
+	font-size: $font-size_-3;
+	text-transform: uppercase;
+
+	color: $label-color;
+}
+
+.form__input {
+	display: block;
+	width: $form_default-input-width; 
+	font-family: $input_font;
+		font-weight: 400;
+		color: $input-color;
+	transition: all .25s  ease-in;
+	background-color: $input-bg-color;
+	border: 1px $input-border-color solid;
+	border-radius: 8px;
+
+	@include mq(laptop) {
+		font-size: $font-size_-half;
+	}
+
+	@include mq(phone) {
+		width: $span-12;
+		display: block;
+		border-radius: 8px;
+		font-size: $font-size_-1;
+	}
+
+
+	&:hover {
+		background: $input-bg-color_hover;
+		border-color: $input-border-color_hover;
+		color: $input-color_hover;
+	}
+
+	&:focus, &:active {
+		background: $input-bg-color_focus;
+		border-color: $input-border-color_focus;
+		box-shadow:
+					0 1px 0 $input-border-color_focus inset,
+					0 -1px 0 $input-border-color_focus inset,
+					1px 0 0 $input-border-color_focus inset,
+					-1px 0 0 $input-border-color_focus inset;		
+	}
+}
+
+
+
+
+
+.form__button {
+	width: auto;
+	font-family: $button-font;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: $button-text-color;
+	
+					
+	padding: $vertical-padding-unit * 2.5
+			 $vertical-padding-unit * 5;
+	
+	border: 2px solid darken($button-bg-color,25%);
+	border-radius: 6px;
+	background: $button-bg-color;
+	background: linear-gradient(359deg, rgba(255, 255, 255, 0.05) 0%, rgba(0,0,0,.25) 100%) $button-bg-color;
+	background-size: 50% 50%;
+	transition: all 0.35s ease-in;
+
+	&:hover {
+		color: rgb(255, 255, 255);
+		border-color: lighten($button-bg-color,10%);
+		background: lighten($button-bg-color,7%);
+		background: linear-gradient(359deg, rgba(255, 255, 255, 0.05) 0%, rgba(0,0,0,.25) 100%) lighten($button-bg-color, 8%);
+		background-size: 50% 50%;
+	}
+
+	&:focus,
+	&:active {
+		border-color: darken($button-bg-color,25%); 
+		background: $footer_bg-color;
+		background: linear-gradient(359deg, rgba(255, 255, 255, 0.05) 0%, rgba(0,0,0,.25) 100%) darken($button-bg-color, 25%);
+		transition: all 0.07s ease-in;
+	}
+}
+
+
+
+
+.form__input-textarea {
+	@extend %form__input;
+	height: 10rem;
+
+}
+
+
+
+/* Hack for placeholder text */
+::-webkit-input-placeholder {
+		color: $input-placeholder-color;
+		font-style: italic;
+}
+:-moz-placeholder { /* older Firefox*/
+	color: $input-placeholder-color;
+	font-style: italic;
+}
+::-moz-placeholder { /* Firefox 19+ */ 
+	color: $input-placeholder-color;
+	font-style: italic;
+	font-size: 18px;
+}
+:-ms-input-placeholder {
+	color: $input-placeholder-color;
+	font-style: italic;
+}
+
+
+
+
+
+/*-------------------------
+	Contact Form SUCCESS
+-------------------------*/
+
+div.success {
+		background: rgba(249,249,248,.70);
+		padding: 18px 36px 72px;
+		border-radius: 9px;
+}
+.success h2 {
+		font-family: 'Novecentosanswide-DemiBold';
+		font-size: 1.9rem;
+		letter-spacing: 1px;
+		text-transform: lowercase;
+		margin-bottom: 9px;
+}
+.success p {
+		font-family: georgia;
+		font-size: 1rem;
+		line-height: 1.38;
+		color: #6d686f;
+		color: rgba(109, 104, 111, .85);
+}
+
+/*-------------------------
+	Contact FORM ERRORS
+-------------------------*/
+
+input.error:hover, input.error:focus {
+		background-color: #f495ab;
+}
+p.error {
+		display: block;
+		text-transform: lowercase;
+		letter-spacing: 0;
+		width: $form_default-input-width;
+		font-size: $font-size_-1;
+		background-color: #f2d1d9;
+		min-height: 30px;
+		margin: -18px
+				0
+				28px
+				16.25%; /* Margin Left needs to be samish as label length */
+
+		padding: 6px 36px 9px 18px;
+		border-radius: 3px;
+		@include mq(laptop) {
+			margin-left: 18.27%
+		}
+		@include mq(phone) {
+			margin: 0px 0 34px  0%;
+			padding: 14px 36px 16px 18px;
+			width: 100%;
+		}
+}
+
+.error, label .error {
+		color: #ed5073;
+}
+
+input.error, textarea.error {
+		color: white;
+		background-color: #e98098;
+		box-shadow:
+			0 2px 0 rgb(243, 33, 82) inset, 
+			0 0 0 rgb(243, 33, 82) inset, 2px 0 0 rgb(243, 33, 82) inset,
+			-2px 0 0 rgb(243, 33, 82) inset, 
+			0px -2px 0px rgb(243, 33, 82) inset
+}
+
+/*  error form placeholder text */
+.error::-webkit-input-placeholder  {
+		color: white;
+}
+.error:-moz-placeholder { /* older Firefox*/
+		color: white;
+}
+.error::-moz-placeholder { /* Firefox 19+ */ 
+		color: white;
+}
+.error:-ms-input-placeholder {
+		color: white;
+}

@@ -1,0 +1,60 @@
+.footer__logo-wrapper {
+	float: left;
+	margin: 0;
+}
+
+.footer__nav-wrapper {
+	float: right;
+	margin: 0;
+}
+
+.footer__link-wrapper {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer__link {
+	display: block;
+	font-family: "Gotham";
+	font-size: 14px;
+	font-weight: 300;
+	padding-right: 30px;
+	text-decoration: none;
+	list-style: none;
+	
+	& a:link {
+		text-decoration: none;
+	}
+
+	& a:hover {
+		color: red;
+		text-decoration: underline;
+		text-decoration-color: green;
+	}
+
+	&:first-of-type {
+	font-family: "Gotham Condensed";
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	}
+
+	&:last-of-type {
+		padding-right: 0;
+	}
+}
+
+.footer {
+	position: relative;
+	border-top: 2px blue solid;
+	padding-top: 14px;
+	margin-top: 9rem; 
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+

@@ -1,0 +1,33 @@
+// GLOBAL VARIABLES
+$container-width: 1366px;
+$container-width--tablet: 1024px;
+$container-width--phone: 100%; 
+
+
+$container-padding: 37px;
+
+
+// Spacing Unit Used throughout site
+$vertical-padding-unit: 7px;
+$text-indent: $vertical-padding-unit * 5;
+
+
+
+// Default Fonts
+
+$main_font-family: "omnes-pro", arial, san-serif;
+
+$headers_font-family: "Viento", arial, san-serif;
+	$headers_color: rgba(220, 61, 28, 1);
+
+$nav_font-family: "presicav", helvetica, arial, san-serif;
+$default-text-color: rgba(51, 51, 51, 0.85);
+$accent-color: rgba(227, 76, 45, 1);
+
+
+
+// Footer Variables
+$footer_bg-color: rgb(22, 31, 36);
+$footer-contact_bg-color: rgba(5, 5, 5, 0.10);
+$footer-nav_color: rgb(116, 104, 102);
+$footer-nav_accent-color: rgba(200, 129, 103,0.93);
